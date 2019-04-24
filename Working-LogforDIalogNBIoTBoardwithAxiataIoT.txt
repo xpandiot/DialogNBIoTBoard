@@ -1,0 +1,213 @@
+12:09:33.371 -> ** XPAND NB-IOT Begin **
+12:09:38.384 -> Initializing Dialog NB-IoT DevBoard....(May take 3 seconds)
+12:09:38.384 -> Configuring to 4800 baud
+12:09:38.384 -> Attempting to open comm with ATs
+12:09:38.418 -> 	---> AT
+12:09:38.452 -> 	<--- OK
+12:09:38.485 -> 	---> ATE0
+12:09:38.519 -> 	<--- OK
+12:09:38.659 -> 	---> ATE0
+12:09:38.693 -> 	<--- OK
+12:09:38.832 -> 	---> ATI
+12:09:39.390 -> 	<--- SIM7000C R1351
+12:09:39.390 -> 
+12:09:39.390 -> OK
+12:09:39.390 -> 
+12:09:39.427 -> Dialog NB-IoT DevBoard detected
+12:09:39.427 -> Initially setting up CELCOM GSM network and checking connectivity...
+12:09:39.461 -> 	---> AT+CNMP=13
+12:09:39.495 -> 	<--- OK
+12:09:39.495 -> 
+12:09:39.495 -> GSM setup complete..
+12:09:39.563 -> 	---> AT+CREG?
+12:09:39.596 -> 	<--- +CREG: 0,1
+12:09:44.639 -> 	---> AT+CNMP?
+12:09:44.708 -> 	<--- +CNMP: 13
+12:09:44.776 -> 	---> AT+COPS?
+12:09:44.878 -> 	<--- +COPS: 0,0,"U Mobile",0
+12:09:44.878 -> Status : CELCOM GSM Online...
+12:09:44.878 -> Disabling GPRS....
+12:09:44.913 -> 	---> AT+CIPSHUT
+12:09:44.947 -> 	<--- SHUT OK
+12:09:45.019 -> 	---> AT+SAPBR=0,1
+12:09:45.055 -> 	<--- OK
+12:09:45.125 -> 	---> AT+CGATT=0
+12:09:46.223 -> 	<--- OK
+12:09:51.222 -> Enabling GPRS....
+12:09:51.259 -> 	---> AT+CIPSHUT
+12:09:51.293 -> 	<--- SHUT OK
+12:09:51.365 -> 	---> AT+CGATT=1
+12:09:55.947 -> 	<--- OK
+12:09:55.982 -> 	---> AT+SAPBR=3,1,"CONTYPE","GPRS"
+12:09:56.085 -> 	<--- OK
+12:09:56.225 -> 	---> AT+SAPBR=3,1,"APN","my3g"
+12:09:56.296 -> 	<--- OK
+12:09:56.366 -> 	---> AT+CSTT="my3g","",""
+12:09:56.400 -> 	<--- OK
+12:09:56.435 -> 	---> AT+SAPBR=3,1,"USER",""
+12:09:56.503 -> 	<--- OK
+12:09:56.541 -> 	---> AT+SAPBR=3,1,"PWD",""
+12:09:56.614 -> 	<--- OK
+12:09:56.649 -> 	---> AT+SAPBR=1,1
+12:09:57.111 -> 	<--- OK
+12:09:57.145 -> 	---> AT+CIICR
+12:09:57.180 -> 	<--- OK
+12:09:57.180 -> Connected to cellular!
+12:09:57.252 -> 	---> AT+CPSI?
+12:09:57.391 -> 	<--- +CPSI: GSM,Online,502-12,0x07d6,4733,85 EGSM 900,-64,0,39-39
+12:10:02.458 -> 	---> AT+CIPSTATUS
+12:10:02.495 -> 	<--- OK
+12:10:02.562 -> 	<--- STATE: IP GPRSACT
+12:10:02.562 -> Connecting to MQTT server... 
+12:10:02.634 -> 	---> AT+CIPSHUT
+12:10:02.702 -> 	<--- SHUT OK
+12:10:02.735 -> 	---> AT+CIPMUX=0
+12:10:02.803 -> 	<--- OK
+12:10:02.803 -> 	---> AT+CIPRXGET=1
+12:10:02.875 -> 	<--- OK
+12:10:02.875 -> AT+CIPSTART="TCP","mqtt.iot.ideamart.io","1883"
+12:10:02.984 -> 	<--- OK
+12:10:04.337 -> 	<--- CONNECT OK
+12:10:04.372 -> 	---> AT+CIPSTATUS
+12:10:04.409 -> 	<--- OK
+12:10:04.514 -> 	<--- STATE: CONNECT OK
+12:10:04.514 -> AT+CIPSEND=90
+12:10:04.514 ->  0x10 0x58 0x0 0x4 0x4D 0x51 0x54 0x54 0x4 0xFFFFFFC2 0x1 0x2C 0x0 0x20 0x4E 0x42 0x49 0x4F 0x54 0x31 0x65 0x37 0x62 0x63 0x39 0x61 0x64 0x30 0x64 0x37 0x63 0x34 0x35 0x62 0x36 0x61 0x32 0x36 0x35 0x32 0x31 0x39 0x35 0x61 0x61 0x62 0x0 0x19 0x64 0x69 0x61 0x6C 0x6F 0x67 0x2D 0x6E 0x62 0x69 0x6F 0x74 0x62 0x6F 0x61 0x72 0x64 0x2D 0x76 0x32 0x5F 0x32 0x30 0x38 0x30 0x0 0xF 0x31 0x35 0x35 0x35 0x36 0x34 0x30 0x39 0x38 0x39 0x5F 0x32 0x30 0x38 0x30
+12:10:05.072 -> 	<--- > 
+12:10:05.518 -> 	<--- SEND OK
+12:10:05.554 -> 	---> AT+CIPSTATUS
+12:10:05.587 -> 	<--- V%A⸮u⸮⸮j
+12:10:05.587 -> Connection failed
+12:10:05.722 -> Retrying MQTT connection in 5 seconds...
+12:10:05.722 -> 	---> AT+CIPSTATUS
+12:10:05.740 -> 	<--- OK
+12:10:05.800 -> 	<--- STATE: CONNECT OK
+12:10:05.800 -> AT+CIPSEND=2
+12:10:05.800 ->  0xFFFFFFE0 0x0
+12:10:06.335 -> 	<--- > 
+12:10:06.543 -> 	<--- SEND OK
+12:10:06.543 -> 	---> AT+CIPCLOSE
+12:10:06.614 -> 	<--- CLOSE OK
+12:10:11.719 -> 	---> AT+CIPSHUT
+12:10:11.754 -> 	<--- SHUT OK
+12:10:11.788 -> 	---> AT+CIPMUX=0
+12:10:11.859 -> 	<--- OK
+12:10:11.893 -> 	---> AT+CIPRXGET=1
+12:10:11.930 -> 	<--- OK
+12:10:11.930 -> AT+CIPSTART="TCP","mqtt.iot.ideamart.io","1883"
+12:10:12.076 -> 	<--- OK
+12:10:12.497 -> 	<--- CONNECT OK
+12:10:12.531 -> 	---> AT+CIPSTATUS
+12:10:12.605 -> 	<--- OK
+12:10:12.675 -> 	<--- STATE: CONNECT OK
+12:10:12.675 -> AT+CIPSEND=90
+12:10:12.675 ->  0x10 0x58 0x0 0x4 0x4D 0x51 0x54 0x54 0x4 0xFFFFFFC2 0x1 0x2C 0x0 0x20 0x4E 0x42 0x49 0x4F 0x54 0x31 0x65 0x37 0x62 0x63 0x39 0x61 0x64 0x30 0x64 0x37 0x63 0x34 0x35 0x62 0x36 0x61 0x32 0x36 0x35 0x32 0x31 0x39 0x35 0x61 0x61 0x62 0x0 0x19 0x64 0x69 0x61 0x6C 0x6F 0x67 0x2D 0x6E 0x62 0x69 0x6F 0x74 0x62 0x6F 0x61 0x72 0x64 0x2D 0x76 0x32 0x5F 0x32 0x30 0x38 0x30 0x0 0xF 0x31 0x35 0x35 0x35 0x36 0x34 0x30 0x39 0x38 0x39 0x5F 0x32 0x30 0x38 0x30
+12:10:13.233 -> 	<--- > 
+12:10:13.621 -> 	<--- SEND OK
+12:10:13.690 -> 	---> AT+CIPSTATUS
+12:10:13.761 -> 	<--- OK
+12:10:13.794 -> 	<--- STATE: CONNECT OK
+12:10:13.828 -> 	---> AT+CIPSTATUS
+12:10:13.902 -> 	<--- OK
+12:10:13.937 -> 	<--- STATE: CONNECT OK
+12:10:13.972 -> 	---> AT+CIPRXGET=4
+12:10:14.043 -> 	<--- +CIPRXGET: 4,4
+12:10:14.077 -> 4 bytes available
+12:10:14.151 -> 1 bytes read
+12:10:14.151 ->  0x20
+12:10:14.223 -> 	---> AT+CIPSTATUS
+12:10:14.259 -> 	<--- OK
+12:10:14.293 -> 	<--- STATE: CONNECT OK
+12:10:14.328 -> 	---> AT+CIPSTATUS
+12:10:14.399 -> 	<--- OK
+12:10:14.436 -> 	<--- STATE: CONNECT OK
+12:10:14.470 -> 	---> AT+CIPRXGET=4
+12:10:14.538 -> 	<--- +CIPRXGET: 4,3
+12:10:14.572 -> 3 bytes available
+12:10:14.643 -> 1 bytes read
+12:10:14.643 ->  0x2
+12:10:14.713 -> 	---> AT+CIPSTATUS
+12:10:14.748 -> 	<--- OK
+12:10:14.817 -> 	<--- STATE: CONNECT OK
+12:10:14.851 -> 	---> AT+CIPSTATUS
+12:10:14.885 -> 	<--- OK
+12:10:14.959 -> 	<--- STATE: CONNECT OK
+12:10:14.996 -> 	---> AT+CIPRXGET=4
+12:10:15.065 -> 	<--- +CIPRXGET: 4,2
+12:10:15.065 -> 2 bytes available
+12:10:15.165 -> 2 bytes read
+12:10:15.165 ->  0x0 0x0
+12:10:15.231 -> 	---> AT+CIPSTATUS
+12:10:15.266 -> 	<--- OK
+12:10:15.333 -> 	<--- STATE: CONNECT OK
+12:10:15.333 -> AT+CIPSEND=37
+12:10:15.333 ->  0xFFFFFF82 0x23 0x0 0x0 0x0 0x1E 0x2B 0x2F 0x31 0x32 0x33 0x2F 0x64 0x69 0x61 0x6C 0x6F 0x67 0x2F 0x6E 0x62 0x69 0x6F 0x74 0x62 0x6F 0x61 0x72 0x64 0x2F 0x76 0x32 0x2F 0x73 0x75 0x62 0x0
+12:10:15.865 -> 	<--- > 
+12:10:16.448 -> 	<--- SEND OK
+12:10:16.519 -> 	---> AT+CIPSTATUS
+12:10:16.586 -> 	<--- OK
+12:10:16.619 -> 	<--- STATE: CONNECT OK
+12:10:16.653 -> 	---> AT+CIPSTATUS
+12:10:16.686 -> 	<--- OK
+12:10:16.755 -> 	<--- STATE: CONNECT OK
+12:10:16.790 -> 	---> AT+CIPRXGET=4
+12:10:16.860 -> 	<--- +CIPRXGET: 4,5
+12:10:16.860 -> 5 bytes available
+12:10:16.964 -> 1 bytes read
+12:10:16.998 ->  0xFFFFFF90
+12:10:17.032 -> 	---> AT+CIPSTATUS
+12:10:17.066 -> 	<--- OK
+12:10:17.102 -> 	<--- STATE: CONNECT OK
+12:10:17.172 -> 	---> AT+CIPSTATUS
+12:10:17.209 -> 	<--- OK
+12:10:17.243 -> 	<--- STATE: CONNECT OK
+12:10:17.281 -> 	---> AT+CIPRXGET=4
+12:10:17.384 -> 	<--- +CIPRXGET: 4,4
+12:10:17.384 -> 4 bytes available
+12:10:17.459 -> 1 bytes read
+12:10:17.496 ->  0x3
+12:10:17.529 -> 	---> AT+CIPSTATUS
+12:10:17.564 -> 	<--- OK
+12:10:17.636 -> 	<--- STATE: CONNECT OK
+12:10:17.672 -> 	---> AT+CIPSTATUS
+12:10:17.706 -> 	<--- OK
+12:10:17.740 -> 	<--- STATE: CONNECT OK
+12:10:17.814 -> 	---> AT+CIPRXGET=4
+12:10:17.886 -> 	<--- +CIPRXGET: 4,3
+12:10:17.886 -> 3 bytes available
+12:10:17.988 -> 3 bytes read
+12:10:18.022 ->  0x0 0x0 0x0
+12:10:18.022 -> *Connection established to mqtt.iot.ideamart.io*Reading battery...
+12:10:28.025 -> 	---> AT+CBC
+12:10:28.093 -> 	<--- +CBC: 0,98,4129
+12:10:29.130 -> Publishing to topic :dialog/nbiotboard/v2/common
+12:10:29.130 -> Message : 
+12:10:29.130 -> {"eventName":"dataPush","status":"none","bat":98.00,"mac":"xpandnbiotv26569395562831978"}
+12:10:29.163 -> 	---> AT+CIPSTATUS
+12:10:29.201 -> 	<--- OK
+12:10:29.305 -> 	<--- STATE: CONNECT OK
+12:10:29.305 -> AT+CIPSEND=120
+12:10:29.305 ->  0x30 0x76 0x0 0x1B 0x64 0x69 0x61 0x6C 0x6F 0x67 0x2F 0x6E 0x62 0x69 0x6F 0x74 0x62 0x6F 0x61 0x72 0x64 0x2F 0x76 0x32 0x2F 0x63 0x6F 0x6D 0x6D 0x6F 0x6E 0x7B 0x22 0x65 0x76 0x65 0x6E 0x74 0x4E 0x61 0x6D 0x65 0x22 0x3A 0x22 0x64 0x61 0x74 0x61 0x50 0x75 0x73 0x68 0x22 0x2C 0x22 0x73 0x74 0x61 0x74 0x75 0x73 0x22 0x3A 0x22 0x6E 0x6F 0x6E 0x65 0x22 0x2C 0x22 0x62 0x61 0x74 0x22 0x3A 0x39 0x38 0x2E 0x30 0x30 0x2C 0x22 0x6D 0x61 0x63 0x22 0x3A 0x22 0x78 0x70 0x61 0x6E 0x64 0x6E 0x62 0x69 0x6F 0x74 0x76 0x32 0x36 0x35 0x36 0x39 0x33 0x39 0x35 0x35 0x36 0x32 0x38 0x33 0x31 0x39 0x37 0x38 0x22 0x7D
+12:10:29.842 -> 	<--- > 
+12:10:30.619 -> 	<--- SEND OK
+12:10:30.619 -> OK!
+12:10:30.653 -> 	---> AT+CIPSTATUS
+12:10:30.691 -> 	<--- OK
+12:10:30.729 -> 	<--- STATE: CONNECT OK
+12:10:40.729 -> Reading battery...
+12:10:40.796 -> 	---> AT+CBC
+12:10:40.868 -> 	<--- +CBC: 0,98,4130
+12:10:41.898 -> Publishing to topic :dialog/nbiotboard/v2/common
+12:10:41.898 -> Message : 
+12:10:41.898 -> {"eventName":"dataPush","status":"none","bat":98.00,"mac":"xpandnbiotv26569395562831978"}
+12:10:41.898 -> 	---> AT+CIPSTATUS
+12:10:41.974 -> 	<--- OK
+12:10:42.043 -> 	<--- STATE: CONNECT OK
+12:10:42.043 -> AT+CIPSEND=120
+12:10:42.043 ->  0x30 0x76 0x0 0x1B 0x64 0x69 0x61 0x6C 0x6F 0x67 0x2F 0x6E 0x62 0x69 0x6F 0x74 0x62 0x6F 0x61 0x72 0x64 0x2F 0x76 0x32 0x2F 0x63 0x6F 0x6D 0x6D 0x6F 0x6E 0x7B 0x22 0x65 0x76 0x65 0x6E 0x74 0x4E 0x61 0x6D 0x65 0x22 0x3A 0x22 0x64 0x61 0x74 0x61 0x50 0x75 0x73 0x68 0x22 0x2C 0x22 0x73 0x74 0x61 0x74 0x75 0x73 0x22 0x3A 0x22 0x6E 0x6F 0x6E 0x65 0x22 0x2C 0x22 0x62 0x61 0x74 0x22 0x3A 0x39 0x38 0x2E 0x30 0x30 0x2C 0x22 0x6D 0x61 0x63 0x22 0x3A 0x22 0x78 0x70 0x61 0x6E 0x64 0x6E 0x62 0x69 0x6F 0x74 0x76 0x32 0x36 0x35 0x36 0x39 0x33 0x39 0x35 0x35 0x36 0x32 0x38 0x33 0x31 0x39 0x37 0x38 0x22 0x7D
+12:10:42.612 -> 	<--- > 
+12:10:43.288 -> 	<--- SEND OK
+12:10:43.288 -> OK!
+12:10:43.325 -> 	---> AT+CIPSTATUS
+12:10:43.363 -> 	<--- OK
+12:10:43.431 -> 	<--- STATE: CONNECT OK
